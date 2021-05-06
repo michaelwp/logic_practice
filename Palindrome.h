@@ -2,6 +2,9 @@
 // Created by michael putong on 05/05/21.
 //
 
+#ifndef LOGIC_PRACTICE_PALINDROME_H
+#define LOGIC_PRACTICE_PALINDROME_H
+
 #include "string"
 #include "iostream"
 #include "vector"
@@ -16,17 +19,19 @@ private:
     int strLen{};
 
     // transform string to uppercase
-    void toUpper() {
-        for_each(str.begin(), str.end(), [](char &c) {
+    string toUpper(string &s) {
+        for_each(s.begin(), s.end(), [](char &c) {
             c = toupper(c);
         });
+
+        return s;
     }
 
     // if strlen value is even
     bool even() {
         map<char, int>::iterator it;
 
-        for (it = mapRes.begin(); it != mapRes.end(); it++) {
+        for (it = this->mapRes.begin(); it != this->mapRes.end(); it++) {
             if ((it->second % 2) != 0) return false;
         }
 
@@ -38,7 +43,7 @@ private:
         map<char, int>::iterator it;
         int total = 0;
 
-        for (it = mapRes.begin(); it != mapRes.end(); it++) {
+        for (it = this->mapRes.begin(); it != this->mapRes.end(); it++) {
             if ((it->second % 2) != 0) {
                 total++;
                 if (total > 1) return false;
@@ -50,23 +55,23 @@ private:
 
     // set mapRes value, number of each character
     void setMap() {
-        for (int i = 0; i <= (strLen - 1); i++) {
-            mapRes[str[i]]++;
+        for (int i = 0; i <= (this->strLen - 1); i++) {
+            this->mapRes[this->str[i]]++;
         }
     }
 
-    // clear data;
-    void clear() {
-        str = "";
-        mapRes = {};
-        strLen = 0;
+public:
+    // constructor
+    explicit Palindrome(string &s) {
+        this->str = this->toUpper(s);
+        this->strLen = s.length();
     }
 
-public:
-    void setStr(string &setStr) {
-        str = setStr;
-        toUpper();
-        strLen = str.length();
+    // destructor
+    ~Palindrome() {
+        this->str.erase();
+        this->mapRes = {};
+        this->strLen = 0;
     }
 
     bool isPalindrome() {
@@ -74,18 +79,17 @@ public:
         bool result;
 
         // check if strLen is odd or even
-        if ((strLen % 2) == 0) {
+        if ((this->strLen % 2) == 0) {
             result = even();
         } else {
             result = odd();
         }
 
-        clear();
         return result;
     }
 };
 
-// unit test
+// UNIT TESTING
 int PalindromeTest() {
     struct testCase {
         string name;
@@ -112,10 +116,9 @@ int PalindromeTest() {
     };
 
     int tCasesLength = (sizeof(tCases) / sizeof(*tCases));
-    Palindrome p;
 
     for (int i = 0; i < tCasesLength; i++) {
-        p.setStr(tCases[i].input);
+        Palindrome p(tCases[i].input);
 
         bool act = p.isPalindrome();
         bool exp = tCases[i].expect;
@@ -132,3 +135,5 @@ int PalindromeTest() {
     return 0;
 }
 
+
+#endif //LOGIC_PRACTICE_PALINDROME1_H

@@ -4,11 +4,17 @@
 
 #include "Palindrome.h"
 #include "FizzBuzz.h"
+#include "Fibonacci.h"
 
 int main() {
     // palindrome
     PalindromeTest();
-    FizzBuzz(20);
+
+    // fizzbuzz
+    FizzBuzzTest();
+
+    // fibonacci
+    FibonacciTest();
 
     return 0;
 }
