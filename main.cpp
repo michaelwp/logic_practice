@@ -5,6 +5,7 @@
 #include "Palindrome.h"
 #include "FizzBuzz.h"
 #include "Fibonacci.h"
+#include "Sort.h"
 
 int main() {
     // palindrome
@@ -15,6 +16,9 @@ int main() {
 
     // fibonacci
     FibonacciTest();
+
+    // sort
+    SortTest();
 
     return 0;
 }

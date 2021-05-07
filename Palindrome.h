@@ -16,7 +16,7 @@ class Palindrome {
 private:
     string str;
     map<char, int> mapRes;
-    int strLen{};
+    int strLen;
 
     // transform string to uppercase
     string toUpper(string &s) {
@@ -70,7 +70,7 @@ public:
     // destructor
     ~Palindrome() {
         this->str.erase();
-        this->mapRes = {};
+        this->mapRes.clear();
         this->strLen = 0;
     }
 

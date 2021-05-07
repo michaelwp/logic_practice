@@ -18,7 +18,7 @@ public:
 
     ~Fibonacci() {
         this->iter = 0;
-        this->fib = {};
+        this->fib.clear();
     }
 
     vector<int> start() {

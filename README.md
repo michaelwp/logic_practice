@@ -9,3 +9,6 @@
    - For numbers which are multiples of both 3 and 5, print "FizzBuzz" instead of the number.
 3. Fibonacci
    - Fibonacci sequence, such that each number is the sum of the two preceding ones.
+4. Sort
+   - Bubble sort.
+   - Insertion sort.
