@@ -2,19 +2,17 @@
 // Created by michael putong on 06/05/21.
 //
 
-#ifndef LOGIC_PRACTICE_FIBONACCI_H
-#define LOGIC_PRACTICE_FIBONACCI_H
+#ifndef LOGIC_PRACTICE_FIBONACCI_HPP
+#define LOGIC_PRACTICE_FIBONACCI_HPP
 
 #include <sstream>
 
 class Fibonacci {
-private:
+protected:
     int iter;
     vector<int> fib;
 public:
-    explicit Fibonacci(int &i) {
-        this->iter = i;
-    }
+    explicit Fibonacci(const int& i) : iter(i) {}
 
     ~Fibonacci() {
         this->iter = 0;
@@ -87,4 +85,4 @@ int FibonacciTest() {
     return 0;
 }
 
-#endif //LOGIC_PRACTICE_FIBONACCI_H
+#endif //LOGIC_PRACTICE_FIBONACCI_HPP

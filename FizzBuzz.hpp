@@ -2,22 +2,20 @@
 // Created by michael putong on 05/05/21.
 //
 
-#ifndef LOGIC_PRACTICE_FIZZBUZZ_H
-#define LOGIC_PRACTICE_FIZZBUZZ_H
+#ifndef LOGIC_PRACTICE_FIZZBUZZ_HPP
+#define LOGIC_PRACTICE_FIZZBUZZ_HPP
 
 class FizzBuzz {
-private:
+protected:
     int iter;
 public:
-    explicit FizzBuzz(int &i) {
-        this->iter = i;
-    }
+    explicit FizzBuzz(const int& i): iter(i) {}
 
     ~FizzBuzz() {
         this->iter = 0;
     }
 
-    string isFizzBuzz(int &i) {
+    string isFizzBuzz(int& i) {
         if (((i % 3) == 0) && ((i % 5) == 0)) {
             return "FizzBuzz";
         } else if ((i % 3) == 0) {
@@ -91,4 +89,4 @@ int FizzBuzzTest() {
 }
 
 
-#endif //LOGIC_PRACTICE_FIZZBUZZ_H
+#endif //LOGIC_PRACTICE_FIZZBUZZ_HPP

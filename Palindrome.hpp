@@ -2,24 +2,18 @@
 // Created by michael putong on 05/05/21.
 //
 
-#ifndef LOGIC_PRACTICE_PALINDROME_H
-#define LOGIC_PRACTICE_PALINDROME_H
-
-#include "string"
-#include "iostream"
-#include "vector"
-#include "map"
-
-using namespace std;
+#ifndef LOGIC_PRACTICE_PALINDROME_CPP
+#define LOGIC_PRACTICE_PALINDROME_CPP
 
 class Palindrome {
-private:
+protected:
     string str;
     map<char, int> mapRes;
     int strLen;
 
+private:
     // transform string to uppercase
-    string toUpper(string &s) {
+    string toUpper(string& s) {
         for_each(s.begin(), s.end(), [](char &c) {
             c = toupper(c);
         });
@@ -62,10 +56,8 @@ private:
 
 public:
     // constructor
-    explicit Palindrome(string &s) {
-        this->str = this->toUpper(s);
-        this->strLen = s.length();
-    }
+    explicit Palindrome(string& s) :
+            str(this->toUpper(s)), strLen(s.length()) {}
 
     // destructor
     ~Palindrome() {

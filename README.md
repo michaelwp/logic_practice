@@ -12,3 +12,4 @@
 4. Sort
    - Bubble sort.
    - Insertion sort.
+   - counting sort.

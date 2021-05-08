@@ -2,10 +2,11 @@
 // Created by michael putong on 05/05/21.
 //
 
-#include "Palindrome.h"
-#include "FizzBuzz.h"
-#include "Fibonacci.h"
-#include "Sort.h"
+#include "header.hpp"
+#include "Palindrome.hpp"
+#include "FizzBuzz.hpp"
+#include "Fibonacci.hpp"
+#include "Sort.hpp"
 
 int main() {
     // palindrome
