@@ -75,7 +75,7 @@ public:
         for (int i = 1; i < count.size(); ++i)
             count[i] += count[i - 1];
 
-        // assign `numbers` element into `output` numbers
+        // assign `numbers` element into `output` arrays
         for (int number : numbers) {
             output[count[number - min] - 1] = number;
             count[number - min]--;
