@@ -2,11 +2,7 @@
 // Created by michael putong on 05/05/21.
 //
 
-#include "header.hpp"
-#include "Palindrome.hpp"
-#include "FizzBuzz.hpp"
-#include "Fibonacci.hpp"
-#include "Sort.hpp"
+#include "main.hpp"
 
 int main() {
     // palindrome
@@ -21,6 +17,11 @@ int main() {
     // sort
     SortTest();
 
+    // light and button
+    LightAndButtonTest();
+
+    // prime number
+    PrimeNumberTest();
+
     return 0;
 }
-

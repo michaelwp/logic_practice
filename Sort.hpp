@@ -5,6 +5,7 @@
 #ifndef LOGIC_PRACTICE_SORT_HPP
 #define LOGIC_PRACTICE_SORT_HPP
 
+// parent class
 class Sort {
 protected:
     vector<int> numbers;
@@ -13,7 +14,7 @@ protected:
 
 public:
     //constructor
-    explicit Sort(const vector<int> &numbers) :
+    explicit Sort(const vector<int> &numbers = {}) :
             numbers(numbers), lengthOfNumbers(numbers.size()) {}
 
     // destructor
@@ -82,6 +83,36 @@ public:
         }
 
         return output;
+    }
+};
+
+// child class
+class Str : public Sort {
+protected:
+    vector<string> str;
+
+private:
+    vector<int> toAscii() {
+        vector<int> asc;
+
+        for (string s:str) {
+            asc.push_back(int(s[0]));
+        }
+
+        return asc;
+    }
+
+public:
+    explicit Str(const vector<string> &s) : str(s) {}
+
+    vector<string> bubble() {
+        vector<string> strRes;
+
+        Sort s(toAscii());
+        vector<int> bSort = s.bubble();
+
+
+        return strRes;
     }
 };
 
@@ -178,6 +209,12 @@ int SortTest() {
         }
 
         cout << "pass the " << name << endl;
+
+        // string sort
+        vector<string> strArray = {"zoo", "beb", "asc", "dad"};
+        Str str(strArray);
+
+        for (string& s :str.bubble()) cout << s << endl;
     }
 
     return 0;

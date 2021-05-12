@@ -12,7 +12,7 @@ protected:
     int iter;
     vector<int> fib;
 public:
-    explicit Fibonacci(const int& i) : iter(i) {}
+    explicit Fibonacci(const int &i) : iter(i) {}
 
     ~Fibonacci() {
         this->iter = 0;
@@ -31,6 +31,7 @@ public:
 
         return this->fib;
     }
+
 };
 
 // UNIT TESTING
