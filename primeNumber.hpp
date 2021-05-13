@@ -18,30 +18,45 @@ class PrimeNumber{
 		}
 
 		vector<int> start(){
-			bool isPrime;
 			vector<int> primeNumber;
 
-			for(int i=2;i < this->N;i++){
-				isPrime = this->isPrimeNumber(i);
+			//for(int i=2;i < this->N;i++){
+			//	if (this->isPrimeNumber(i)) 
+			//		primeNumber.push_back(i); 
+			//}
+			
+			int i=2;
 
-				if (isPrime==true) 
-					primeNumber.push_back(i); 
+			while(i<this->N){
+				if(this->isPrimeNumber(i))
+					primeNumber.push_back(i);
+				i++;
 			}
 
 			return primeNumber;
 		}
 
 		bool isPrimeNumber(int n){
-			bool isPrime = true;
+			//bool isPrime = true;
 
-			for(int i=2;i<=n/2;i++){
-				if (n % i == 0){
-					isPrime = false;
-					break;	
-				}
-			}
+			//for(int i=2;i<=n/2;i++){
+			//	if (n % i == 0){
+					//isPrime = false;
+			//		return false;
+					//break;	
+			//	}
+			//}
 			
-			return isPrime;
+			//return isPrime;
+			
+			int i=2;
+
+			while(i<=n/2){
+				if(n%i == 0) return false;
+				i++;
+			}
+
+			return true;
 		}
 };
 
