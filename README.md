@@ -13,3 +13,5 @@
    - Bubble sort.
    - Insertion sort.
    - counting sort.
+5. Prime number
+
